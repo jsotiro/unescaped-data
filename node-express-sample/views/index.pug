@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+      form(action="/data" method="POST")
+        br
+        label( for="data") Data to test
+        br
+        textarea(name="data" id="data" cols="50" rows="5") <script>alert('oops!');</script>
+        br
+        label( for="template") Template to use
+        br
+        select(id="template" name="template")
+          option(value="pug") pug
+          option(value="handlebars") handlebars
+          option(value="ejs") ejs
+        br
+        br
+
+        input(type="submit", value="Submit")
