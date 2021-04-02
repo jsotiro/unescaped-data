@@ -1,8 +1,12 @@
 #!/bin/sh
 if [ -n "$1" ]; then
-	PATH_VAR=$1
+  PATH_VAR=$1
 else
-  PATH_VAR="."
+  echo This script uses grep and regex to locate recursively web templates allowing unsafe\/unescaped data injection
+  echo usage  .\/wts.sh \<root folder\>
+	echo e.g.  .\/wts.sh .   or  .\/wts.sh \/src\/myproject\/src\/templates
+	echo it is recommended that you specify the directory with the templates, otherwise you may get many false positives from libraries, eg npm modules
+	exit
 fi
 echo scanning  $PATH_VAR and its subdirectories
 

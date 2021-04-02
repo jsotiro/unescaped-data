@@ -20,9 +20,7 @@ The samples are grouped by language/app runtime and include:
 
 Some early tests with SonarCube shows that the community edition will not detect any whereas the developer edition (in sonarcloud) will only detect the plain PHP and not Twig or any other template
 
-A summary table of how each template engine allows unescaping is below:
-
-The bash script wts.sh uses regular expressions to grep and show files and line numbers for a  directory and its sub-directories.
+The bash script wts.sh uses regular expressions to grep and show files and line numbers for a  directory and its sub-directories. You need to make it executable first.
 
 usage
 **.\wts.sh <root_folder>**
@@ -31,6 +29,9 @@ e.g.
 
 **.\wts.sh .**  
 **.\wts.sh ~/src/myproject/templates**
+
+
+Summary of how each template engine allows unescaping:
 
 |Template |Look for  | Comments|
 |--- | --- | ---
