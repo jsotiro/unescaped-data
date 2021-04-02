@@ -1,0 +1,11 @@
+<html lang="eng">
+<body>
+{{ data }}
+<p>value of a is </p>
+<p id="result"></p>
+<script>
+    var a = {{ data | raw}};
+    document.getElementById("result").innerHTML = a+1;
+    </script>
+</body>
+</html>
