@@ -37,7 +37,7 @@ Summary of how each template engine allows unescaping:
 |--- | --- | ---
 |**django**| {{data &#124; **_safe_**}} or  {{data &#124; _**datasafeseq**_}} for sequence items  - Alternatively,   auto-escape off can be turned off for a section using {% autoescape off %}{{ title:escape }}{% endautoescape %} |[Documentation](https://docs.djangoproject.com/en/3.0/ref/templates/builtins/#std:templatefilter-safe)|
 |**Plain PHP**|unsescaped by default. Look for _echo $var_. Using json_encode not always safe, e.g. '<?php $output = '<!--<script>'; echo json_encode($output); ?> Solution to Use JSON_HEX_TAG to escape < and > (requires PHP 5.3.0).   |See discussion on [StackOverflow](https://stackoverflow.com/questions/23740548/how-do-i-pass-variables-and-data-from-php-to-javascript) |
-|**twig**|**{% autoescape false %}** for a block or **{{ data|raw }}** in a block with autoescape on  |[Documentation](https://twig.symfony.com/doc/3.x/tags/autoescape.html)|
+|**twig**|**{% autoescape false %}** for a block or **{{** data **&#124;raw }}** in a block with autoescape on  |[Documentation](https://twig.symfony.com/doc/3.x/tags/autoescape.html)|
 |**ThemeLeaf**|**_th:utext_**=${..}|[Documentation](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#unescaped-text)|
 |**Mustache**|**_{{{_**.._**}}}**_ or {{**_&_**..}}|[Documentation](https://mustache.github.io/mustache.5.html)|
 |**Freemarker**|<#ftl output_format="XML" **auto_esc=false**> /  **<#noautoesc>**..${data}..**</#noautoesc>**|applies to template / block [Documentation](https://freemarker.apache.org/docs/ref_directive_noautoesc.html)|
